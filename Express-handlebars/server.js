@@ -14,7 +14,16 @@ app.set('view engine', 'hbs')
 
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home')       //uses default layout 'main' since layout attribute isn't explicitly specified.
+})
+
+
+app.get('/word', (req, res) => {
+    res.render('word', {
+        English: 'aback',     
+        Arabic: 'N/A',
+        layout: 'simple'    //The layout of word.hbs is going to be simple.hbs
+    })
 })
 
 
