@@ -43,7 +43,6 @@ module.exports.addMember = (member) => {
             reject("Couldn't add member for the following error: " + error)
         });
     })
-    
 }
 
 
@@ -53,5 +52,4 @@ module.exports.getMembers = () => {
             reject("Couldn't find members") 
         })
     })
-    
 }
