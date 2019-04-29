@@ -1,0 +1,9 @@
+1- Create app with name appName: 
+	heroku create appName
+
+2- create database for app appName:
+	heroku addons:create heroku-postgresql:hobby-dev -a appName
+
+3- check database credentials for appName:
+	heroku pg:credentials:url DATABASE -a appName
+
