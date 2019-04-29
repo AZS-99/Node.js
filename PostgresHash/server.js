@@ -30,6 +30,13 @@ app.get('/signUp', (req, res) => {
 })
 
 
+app.get('/signIn', (req, res) => {
+    res.render('signIn', {
+        title: 'Sign In'
+    })
+})
+
+
 app.post('/signUp', (req, res) => {
     dataManagement.addUser(req.body).then(() => {
         dataManagement.getUsers().then(users => {
@@ -39,6 +46,15 @@ app.post('/signUp', (req, res) => {
         })
     }).catch(error => {
         res.send(error)
+    })
+})
+
+
+app.post('/signIn', (req, res) => {
+    dataManagement.verifyUser(req.body).then(isValid => {
+        res.send(isValid)
+    }).catch(error => {
+        res.send('app.post fn failure: ' + error)
     })
 })
 

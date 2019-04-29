@@ -1,4 +1,7 @@
 const Sequelise = require('sequelize')
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10
 
 const database = new Sequelise('d9pv56gqgfus8k', 'mraidxxitneysw', '672873196b044cc192ec4e01e98f17046e3660f59c082973c4973996b1492074', {
     host: 'ec2-23-21-129-125.compute-1.amazonaws.com',
@@ -37,8 +40,31 @@ module.exports.initialise = () => {
 
 module.exports.addUser = (user) => {
     return new Promise((resolve, reject) => {
-        Users2.create(user).then(resolve).catch(error => {
-            reject('addUser fn failure: ' + error)
+        bcrypt.hash(user.password, saltRounds).then(hash => {
+            user.password = hash
+            Users2.create(user).then(resolve).catch(error => {
+                reject('Inserting a user in addUser fn failure: ' + error)
+            })
+        }).catch(error => {
+            reject('bcrypt in addUser fn failure: ' + error)
+        })
+        
+    })
+}
+
+
+module.exports.verifyUser = (userEmailAndPassword) => {
+    return new Promise((resolve, reject) => {
+        Users2.findAll({
+            where: {
+                email: userEmailAndPassword.email
+            }
+        }).then(matchingUsers => {
+            bcrypt.compare(userEmailAndPassword.password, matchingUsers[0].password).then(resolve).catch(error => {
+                reject('bcrypt in verifyUser failure: ' + error)
+            })
+        }).catch(error => {
+            reject('Users.find() in verifyUser fn failure: ' + error)
         })
     })
 }
