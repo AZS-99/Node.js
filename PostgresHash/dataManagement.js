@@ -1,7 +1,7 @@
 const Sequelise = require('sequelize')
 const bcrypt = require('bcrypt')
 
-const saltRounds = 10
+const saltRounds = 14
 
 const database = new Sequelise('d9pv56gqgfus8k', 'mraidxxitneysw', '672873196b044cc192ec4e01e98f17046e3660f59c082973c4973996b1492074', {
     host: 'ec2-23-21-129-125.compute-1.amazonaws.com',
@@ -48,7 +48,6 @@ module.exports.addUser = (user) => {
         }).catch(error => {
             reject('bcrypt in addUser fn failure: ' + error)
         })
-        
     })
 }
 
@@ -60,6 +59,7 @@ module.exports.verifyUser = (userEmailAndPassword) => {
                 email: userEmailAndPassword.email
             }
         }).then(matchingUsers => {
+            //plain text, then hash
             bcrypt.compare(userEmailAndPassword.password, matchingUsers[0].password).then(resolve).catch(error => {
                 reject('bcrypt in verifyUser failure: ' + error)
             })
