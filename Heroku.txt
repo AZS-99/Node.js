@@ -7,3 +7,5 @@
 3- check database credentials for appName:
 	heroku pg:credentials:url DATABASE -a appName
 
+4- destroy and app:
+	heroku apps:destroy -a appName
