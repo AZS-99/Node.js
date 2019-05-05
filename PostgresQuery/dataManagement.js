@@ -1,6 +1,6 @@
 const Sequelise = require('sequelize')
 
-const database = new Sequelise('dckvpt2438b1cv', 'txsbechvhwezrl', 'df2c5eb40df16b1a763cec7df1ef0a43defccc399698376dcee8fe534f837220', {
+const database = new Sequelise('d77ot1939uhru0', 'ekxuoxpxqmzqjl', 'bc084b78efa3c3dc041317f29c6ec9b51259d6b6cdec1e6168a14b1b072da555', {
     host: 'ec2-54-225-116-36.compute-1.amazonaws.com',
     port: 5432,
     dialect: 'postgres',
@@ -21,7 +21,8 @@ const Members = database.define('Members', {
     },
     firstName: Sequelise.STRING,
     surname: Sequelise.STRING,
-    password: Sequelise.STRING
+    password: Sequelise.STRING,
+    profilePic: Sequelise.STRING
 })
 
 
@@ -35,6 +36,7 @@ module.exports.initialise = () => {
 
 
 module.exports.addMember = (member) => {
+    console.log(member)
     return new Promise ((resolve, reject) => {
         Members.create(member).then(resolve).catch(error => {
             reject("addMember fn failure: " + error)

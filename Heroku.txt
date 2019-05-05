@@ -9,3 +9,6 @@
 
 4- destroy and app:
 	heroku apps:destroy -a appName
+
+5- Delate all data in database:
+	heroku pg:reset DATABASE -a appName

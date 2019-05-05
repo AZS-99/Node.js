@@ -1,7 +1,7 @@
 const Sequelise = require('sequelize')
 
-const database = new Sequelise('ddmt8sc48le9ap', 'oqtsaytnuluhpl', '4ef811885089d130408ba2ab1f7603ffb2e9b80f2303463ce634c70fd684ae6f', {
-    host: 'ec2-54-225-129-101.compute-1.amazonaws.com',
+const database = new Sequelise('d77ot1939uhru0', 'ekxuoxpxqmzqjl', 'bc084b78efa3c3dc041317f29c6ec9b51259d6b6cdec1e6168a14b1b072da555', {
+    host: 'ec2-54-225-116-36.compute-1.amazonaws.com',
     port: '5432',
     dialect: 'postgres', 
     dialectOptions: {
@@ -21,7 +21,9 @@ const Members = database.define('Members', {
         unique: true
     },
     firstName: Sequelise.STRING,
-    surname: Sequelise.STRING
+    surname: Sequelise.STRING,
+    password: Sequelise.STRING,
+    profilePic: Sequelise.STRING
 })
 
 
