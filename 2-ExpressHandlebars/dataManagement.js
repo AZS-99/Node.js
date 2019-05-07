@@ -31,3 +31,14 @@ module.exports.getMembers = () => {
             reject("getMembers fn failure")
     })
 }
+
+
+module.exports.getMemberByEmail = (email) => {
+    return new Promise((resolve, reject) => {
+        members.forEach(member => {
+            if (member.email == email)
+                resolve(member)
+        })
+        reject("getMemberByEmail fn: Member not found")
+    })
+}

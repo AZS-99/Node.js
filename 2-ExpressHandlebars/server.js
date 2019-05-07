@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/members', (req, res) => {
+    //reserved-variable 'layout' is not set, so the default layout is main.hbs
     dataManagement.getMembers().then(membersArray => {
         res.render('members', {
             title: 'Members',
@@ -27,6 +28,17 @@ app.get('/members', (req, res) => {
         })
     })
     
+})
+
+
+app.get('/member/:email', (req, res) => {
+    dataManagement.getMemberByEmail(req.params.email).then(member => {
+        res.render('member', {
+            member: member
+        })
+    }).catch(error => {
+        res.send(error)
+    })
 })
 
 

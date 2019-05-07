@@ -1,9 +1,10 @@
+{{>navbar}}
 <table class="table">
     <thead>
         <tr scope="row">
         <th scope="col">Member#</th>
         <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Surname</th>
         <th scope="col">Email</th>
         <th scope="col">Status</th>
     </tr>
@@ -12,7 +13,7 @@
     <tbody>
     {{#each members}}
     <tr scope="row">
-        <td scope="col">{{memberId}}</td>
+        <td scope="col"><a href="/member/{{email}}">{{memberId}}</a></td>
         <td scope="col">{{firstName}}</td>
         <td scope="col">{{surname}}</td>
         <td scope="col">{{email}}</td>
