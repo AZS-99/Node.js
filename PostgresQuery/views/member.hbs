@@ -1,19 +1,21 @@
 <table class="table">
     <thead>
-        <tr class="row">
-            <th class="col">First Name</th>
-            <th class="col">Surname</th>
-            <th class="col">Email</th>
-            <th class="col">Profile Pic</th>
+        <tr scope="row">
+            <th scope="col">Profile Picture</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
         </tr>
     </thead>
 
     <tbody>
-        <tr class="row">
-            <td class="col">{{member.firsName}}</td>
-            <td class="col">{{member.surname}}</td>
-            <td class="col">{{member.email}}</td>
-            <td class="col"><img src={{image}} class="img-responsive img-thumbnail" /></td>
+        <tr scope="row">
+            <td scope="col"><img src={{image}} class="img-responsive img-thumbnail" /></td>
+            {{#with member}}
+                <td scope="col">{{firstName}}</td>
+                <td scope="col">{{surname}}</td>
+                <td scope="col">{{email}}</td>
+            {{/with}}
         </tr>
     </tbody>
 </table>
