@@ -1,3 +1,4 @@
+0- To install Heroku on WSL:  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 1- Create app with name appName: 
 	heroku create appName
 
