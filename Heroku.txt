@@ -1,4 +1,5 @@
 0- To install Heroku on WSL:  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
 1- Create app with name appName: 
 	heroku create appName
 
@@ -8,8 +9,8 @@
 3- check database credentials for appName:
 	heroku pg:credentials:url DATABASE -a appName
 
-4- destroy and app:
+4- destroy an app:
 	heroku apps:destroy -a appName
 
-5- Delate all data in database:
+5- Delete all data in database:
 	heroku pg:reset DATABASE -a appName
