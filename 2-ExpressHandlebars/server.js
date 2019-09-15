@@ -34,19 +34,11 @@ app.get('/members', (req, res) => {
 app.get('/member/:email', (req, res) => {
     dataManagement.getMemberByEmail(req.params.email).then(member => {
         res.render('member', {
-            member: member
+            member: member,
+            title: member.firstName + ' ' + member.surname
         })
     }).catch(error => {
         res.send(error)
-    })
-})
-
-
-app.get('/word', (req, res) => {
-    res.render('word', {
-        English: 'aback',   //pass the value 'aback' to the 'English' template  
-        Arabic: 'N/A',
-        layout: 'simple'    //The layout of word.hbs is going to be simple.hbs
     })
 })
 

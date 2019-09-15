@@ -17,7 +17,7 @@ app.engine('hbs', exphbs({
 }))
 
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static('public'))
+app.use(express.static('public')) //check pics in public 
 
 const upload = multer({storage: 
     multer.diskStorage({
