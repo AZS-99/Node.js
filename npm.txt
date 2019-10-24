@@ -1,0 +1,7 @@
+To begin any program: 
+	1- Create js file; like server.js or main.js
+	2- type: npm -y init in the terminal 
+
+To run your app on local: 
+	1- type: node appName 
+	2- In your browser, enter the url: localhost:8080 
