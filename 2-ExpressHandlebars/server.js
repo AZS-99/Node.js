@@ -15,7 +15,14 @@ app.engine('hbs', exphbs({
 
 
 app.get('/', (req, res) => {
-    res.render('home')       //uses default layout 'main', since layout attribute isn't explicitly specified.
+    let navigationItems = ["Home", "About"]
+    res.render('home', {
+        navItems: navigationItems  //uses default layout 'main', since layout attribute isn't explicitly specified.
+    })       
+})
+
+app.get('/Home', (req, res) => {
+    res.redirect('/')
 })
 
 
