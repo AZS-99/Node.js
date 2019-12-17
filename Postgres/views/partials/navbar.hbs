@@ -1,0 +1,16 @@
+
+<nav class="navbar navbar-expand-sm navbar-light bg-danger">
+    <ul class="navbar-nav">
+        {{#each navbarItems}}
+            <li class="nav-item">
+                <a class="nav-link" href="/{{this}}">{{this}}</a>
+            </li>
+        {{/each}}
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/signUp">Sign up</a>
+        </li>
+    </ul>
+</nav>
