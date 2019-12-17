@@ -28,10 +28,10 @@ app.get('/Home', (req, res) => {
 
 app.get('/members', (req, res) => {
     //reserved-variable 'layout' is not set, so the default layout is main.hbs
-    dataManagement.getMembers().then(membersArray => {
+    dataManagement.getAllMembers().then(membersArray => {
         res.render('members', {
             title: 'Members',
-            members: membersArray
+            members: membersArrays
         })
     })
     

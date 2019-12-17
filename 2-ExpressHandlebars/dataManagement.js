@@ -23,7 +23,7 @@ let members = [
 ]
 
 
-module.exports.getMembers = () => {
+module.exports.getAllMembers = () => {
     return new Promise((resolve, reject) => {
         if (members)
             resolve(members)
