@@ -9,8 +9,10 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
+        {{#each navbarItemsRight}}
         <li class="nav-item">
-            <a class="nav-link" href="/signUp">Sign up</a>
+            <a class="nav-link" href="/{{this}}">{{this}}</a>
         </li>
+        {{/each}}
     </ul>
 </nav>

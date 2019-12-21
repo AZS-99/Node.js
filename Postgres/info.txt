@@ -1,1 +1,8 @@
-To create databse 
+1- Create database for app appName:
+	heroku addons:create heroku-postgresql:hobby-dev -a appName
+
+2- Check database credentials for appName:
+	heroku pg:credentials:url DATABASE -a appName
+
+3- Delete all data in database:
+	heroku pg:reset DATABASE -a appName
