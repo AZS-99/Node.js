@@ -1,0 +1,25 @@
+{{>navbar}}
+<table class="table">
+    <thead>
+        <tr scope="row">
+            <th></th>
+            <th>User#</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Premium</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td><input type="checkbox" name="checkedUsers" value="{{this}}"/></td>
+            <td>{{userID}}</td>
+            <td>{{firstName}}</td>
+            <td>{{surname}}</td>
+            <td>{{#if isPremium}}Yes{{else}}No{{/if}}</td>
+            <td>{{email}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
