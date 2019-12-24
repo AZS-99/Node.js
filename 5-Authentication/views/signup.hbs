@@ -1,0 +1,22 @@
+{{>navbar}}
+<form method="POST" action="/signup">
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">First Name</label>
+        <input type="text" class="form-control form-control-lg col-sm-2" name="firstName" required  />
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Surname</label>
+        <input type="text" class="form-control form-control-lg col-sm-2" name="surname"  required/>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Email</label>
+        <input type="email" class="form-control form-control-lg col-sm-6" name="email" required/>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Password</label>
+        <input type="password" class="form-control form-control-lg col-sm-6" name="password" required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
