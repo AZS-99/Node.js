@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require ('express-handlebars')
+const path = require('path')
 const dataManagement = require('./dataManagement')
 
 const http_port = process.env.PORT || 8080
@@ -12,6 +13,9 @@ app.engine('hbs', exphbs({
     extname: 'hbs',
     defaultLayout: 'main'
 }))
+
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap')))
+app.use('/jquery', express.static(path.join(__dirname, '/jquery/dist/jquery.js')))
 
 
 app.get('/', (req, res) => {
