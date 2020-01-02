@@ -14,6 +14,8 @@ app.engine('hbs', exphbs({
     defaultLayout: 'main'
 }))
 
+
+//Granting access to bootstrap through the link /bootstrap; same for jquery. 
 app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap')))
 app.use('/jquery', express.static(path.join(__dirname, '/jquery/dist/jquery.js')))
 
