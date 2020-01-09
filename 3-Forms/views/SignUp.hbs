@@ -1,26 +1,61 @@
 {{!-- method=post and action=/signUp together redirect to app.post(/signUp) on submition --}}
-<form method="POST" action="/SignUp">
+{{>navbar}}
+
+<br />
+<form method="POST" action="/signUp">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label col-form-label-lg text-center">First Name</label>
-        <input type="text" class="col-sm-2 form-control form-control-lg" name="firstName" placeholder="John" required>
-        <label class="col-sm-2 col-form-label col-form-label-lg text-center">Surname</label>
-        <input type="text" class="col-sm-2 form-control form-control-lg" name="surname" placeholder="Doe" required />
+        <label class="col-sm-2 col-form-label col-form-label-lg text-right">First Name</label>
+        <input class="form-control form-control-lg col-sm-3" type="text" name="firstName" maxlength="30" required />
+
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Surname</label>
+        <input class="form-control form-control-lg col-sm-3" type="text" name="surname" maxlength="30" required />
     </div>
+
 
     <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label col-form-label-lg text-center">Email</label>
-        <input type="email" class="form-control form-control-lg col-sm-6" name="email" id="email"
-            placeholder="example@efas.com" required />
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Email</label>
+        <input class="form-control form-control-lg col-sm-8" type="email" name="email" maxlength="320" required />
     </div>
+
 
     <div class="form-group row">
-        <label for="password" class="col-sm-2 col-form-label col-form-label-lg text-center">Password</label>
-        <input type="password" class="form-control form-control-lg col-sm-6" name="password" id="password" required />
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Password</label>
+        <input class="form-control form-control-lg col-sm-5" type="password" name="password" maxlength="50" required />
     </div>
 
-    <div class="form-group">
-        <input class="form-control" type="file" name="profilePic" />
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Re-Password</label>
+        <input class="form-control form-control-lg col-sm-5" type="password" name="passwordConfirm" maxlength="50" required />
     </div>
 
-    <button type="submit">Submit</button>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Phone Number</label>
+        <input class="form-control form-control-lg col-sm-5" type="tel" name="phoneNumber" maxlength="10" />
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label col-form-label-lg text-right">Gender</label>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required />
+            <label class="form-check-label form-check-label-lg" for="genderMale">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+            <label class="form-check-label" for="genderFemale">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other">
+            <label class="form-check-label" for="genderOther">Other</label>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-primary col-sm-1" type="submit">Submit</button>
+        </div>
+    </div>
 </form>

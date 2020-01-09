@@ -22,11 +22,30 @@ const users = database.define('USERS', {
         autoIncrement: true,
         primaryKey: true
     },
-    firstName: Sequelise.STRING,
-    surname: Sequelise.STRING,
+    firstName: {
+        type: Sequelise.STRING,
+        validate: {
+            is: ["^[a-z]+$", "g"],
+            len: [2, 20],
+            notEmpty: true //Do not allow empty strings
+        }
+        
+    },
+    surname: {
+        type: Sequelise.STRING,
+        validate: {
+            is: ["^[a-z]+$", "g"],
+            len: [2, 20],
+            notEmpty: true
+        }
+    },
     email: {
         type: Sequelise.STRING,
-        unique: true
+        unique: true,
+        validate: {
+            isEmail: true,
+            len: [7, 300]
+        }
     },
     password: Sequelise.STRING
 })
@@ -50,9 +69,11 @@ module.exports.addUser = async user => {
 }
 
 
-module.exports.getAllUsers = async () => {
+module.exports.getUsers = async (query) => {
     try {
-        return await users.findAll()
+        return await users.findAll({
+            where: query
+        })
     } catch (error) {
         return ("Counld not get all users\n" + error)
     }
@@ -67,14 +88,11 @@ module.exports.deleteUser = async email => {
         }
     })
 
-
 }
 
 
-module.exports.getUser = async userEmail => {
-    return await users.findAll({
-        where: {
-            email: userEmail
-        }
+module.exports.getUser = async query => {
+    return await users.findOne({
+        where: query
     })
 }

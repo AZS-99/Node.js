@@ -1,3 +1,4 @@
+const alert = require('alert-node')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
@@ -42,22 +43,32 @@ app.get('/signUp', (req, res) => {
 
 
 app.post('/signUp', async (req, res) => {
-    await database.addUser(req.body)
-    res.redirect('/users') 
+    try {
+        await database.addUser(req.body)
+        res.redirect('/users') 
+    } catch (error) {
+        alert(error)
+    }
+    
 })
 
 
 app.get('/users', async (req, res) => {
-    res.render('users', {
-        navbarItems: navbarItems,
-        title: "Users",
-        users: await database.getAllUsers()
-    })
+    try{
+        res.render('users', {
+            navbarItems: navbarItems,
+            title: "Users",
+            users: await database.getUsers(req.query)
+        })
+    } catch(error) {
+        alert(error)
+    }
+    
 })
 
 
 app.get('/user/:email', async (req, res) => {
-    const user = await database.getUser(req.params.email)
+    const user = await database.getUser({email: req.params.email})
     res.send(user) 
 })
 
@@ -79,6 +90,6 @@ app.post('/users', async (req, res) => {
 database.initialise().then(
     app.listen(HTTP_PORT)
 ).catch(error => {
-    console.log(error)
+    alert(error)
 })
 

@@ -8,7 +8,7 @@ $(() => {
                 dataType: 'json',
                 success: (resultJSON) => {
                     if (resultJSON.result) {
-                        $('#emailNotificationLabel').text('Email aleady exists!')
+                        $('#emailNotificationLabel').text('Email is already registered in our system!')
                     } else {
                         $('#emailNotificationLabel').text('')
                     }
@@ -20,5 +20,5 @@ $(() => {
         }
     })
 
-    
+
 })
