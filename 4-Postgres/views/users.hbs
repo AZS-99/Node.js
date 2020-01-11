@@ -7,6 +7,8 @@
                 <th>User#</th>
                 <th>First Name</th>
                 <th>Surname</th>
+                <th>Gender</th>
+                <th>Phone#</th>
                 <th>Email</th>
                 <th>Joined On</th>
             </tr>
@@ -16,10 +18,12 @@
 
             {{#each users}}
             <tr scope="row">
-                <td><input type="checkbox" name="{{userID}}" value="{{email}}" /></td>
+                <td><input type="checkbox" name="emails" value="{{email}}" /></td>
                 <td>{{userID}}</td>
                 <td>{{firstName}}</td>
                 <td>{{surname}}</td>
+                <td>{{gender}}</td>
+                <td>{{phoneNumber}}</td>
                 <td>{{email}}</td>
                 <td>{{createdAt}}</td>
             </tr>

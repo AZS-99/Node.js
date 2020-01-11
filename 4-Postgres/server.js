@@ -15,7 +15,7 @@ app.engine('hbs', exphbs({
     extname: 'hbs',
     defaultLayout: 'main'
 }))
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap')))
@@ -45,47 +45,58 @@ app.get('/signUp', (req, res) => {
 app.post('/signUp', async (req, res) => {
     try {
         await database.addUser(req.body)
-        res.redirect('/users') 
+        res.redirect('/users')
     } catch (error) {
         alert(error)
     }
-    
 })
 
 
 app.get('/users', async (req, res) => {
-    try{
+    try {
         res.render('users', {
             navbarItems: navbarItems,
             title: "Users",
             users: await database.getUsers(req.query)
         })
-    } catch(error) {
+    } catch (error) {
         alert(error)
     }
-    
 })
 
 
 app.get('/user/:email', async (req, res) => {
-    const user = await database.getUser({email: req.params.email})
-    res.send(user) 
+    const user = await database.getUser({ email: req.params.email })
+    res.send(user)
 })
 
 
 app.post('/users', async (req, res) => {
-    
-    const users = req.body
-    if (users.btn == "delete") {
-        for (var userID in users){
-            await database.deleteUser(users[userID])
+
+    const formJSON = req.body //{userID: email, ...,  btn: delete/view}
+    if (formJSON.btn == "delete") {
+        if (formJSON.emails.constructor === Array) { //Check if more than one email was checked by user
+            for (let email in formJSON.emails) {
+                try {
+                    await database.deleteUser({ email: email })
+                } catch (error) {
+                    alert(error)
+                }
+            }
+        } else {
+            try {
+                await database.deleteUser({email: formJSON.emails})
+            }catch (error) {
+                alert(error)
+            }
         }
+
         res.redirect('/users')
     } else {
         res.send(users)
     }
-    
 })
+
 
 database.initialise().then(
     app.listen(HTTP_PORT)

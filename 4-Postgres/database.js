@@ -47,7 +47,18 @@ const users = database.define('USERS', {
             len: [7, 300]
         }
     },
-    password: Sequelise.STRING
+    gender: {
+        type: Sequelise.ENUM,
+        values: ['male', 'female', 'other']
+    },
+    password: Sequelise.STRING,
+    phoneNumber: {
+        type: Sequelise.BIGINT,
+        unique: true,
+        validate: {
+            isNumeric: true
+        }
+    }
 })
 
 
@@ -80,12 +91,10 @@ module.exports.getUsers = async (query) => {
 }
 
 
-module.exports.deleteUser = async email => {
+module.exports.deleteUser = async userProperty => {
 
     await users.destroy({
-        where: {
-            email: email
-        }
+        where: userProperty
     })
 
 }
