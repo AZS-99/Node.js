@@ -28,8 +28,7 @@ const users = database.define('USERS', {
             is: ["^[a-z]+$", "g"],
             len: [2, 20],
             notEmpty: true //Do not allow empty strings
-        }
-        
+        }  
     },
     surname: {
         type: Sequelise.STRING,
@@ -51,12 +50,15 @@ const users = database.define('USERS', {
         type: Sequelise.ENUM,
         values: ['male', 'female', 'other']
     },
-    password: Sequelise.STRING,
+    password: {
+        type: Sequelise.STRING,
+        notEmpty: true,
+        len: [8, 50]
+    },
     phoneNumber: {
-        type: Sequelise.BIGINT,
-        unique: true,
+        type: Sequelise.STRING,
         validate: {
-            isNumeric: true
+            is: ["^$|^[0-9]{10,15}$", "g"] //literally a space between the comma and 15 gave me hell lol
         }
     }
 })

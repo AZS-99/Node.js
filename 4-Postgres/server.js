@@ -43,6 +43,7 @@ app.get('/signUp', (req, res) => {
 
 
 app.post('/signUp', async (req, res) => {
+    
     try {
         await database.addUser(req.body)
         res.redirect('/users')
@@ -53,6 +54,7 @@ app.post('/signUp', async (req, res) => {
 
 
 app.get('/users', async (req, res) => {
+    
     try {
         res.render('users', {
             navbarItems: navbarItems,

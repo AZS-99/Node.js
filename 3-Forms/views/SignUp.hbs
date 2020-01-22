@@ -5,34 +5,44 @@
 <form method="POST" action="/signUp">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label col-form-label-lg text-right">First Name</label>
-        <input class="form-control form-control-lg col-sm-3" type="text" name="firstName" maxlength="30" required />
+        <input class="form-control form-control-lg col-sm-3" type="text" name="firstName" id="firstName" minlength="2" maxlength="30" pattern="^[a-zA-Z]+$" title="Enter a valid name" autofocus required />
 
         <label class="col-form-label col-form-label-lg col-sm-2 text-right">Surname</label>
-        <input class="form-control form-control-lg col-sm-3" type="text" name="surname" maxlength="30" required />
+        <input class="form-control form-control-lg col-sm-3" type="text" name="surname" id="surname" minlength="2" maxlength="30" pattern="^[a-zA-Z]+$" title="Enter a valid name" required />
+
+        <label class="col-sm-2 col-form-label text-danger" id="nameFeedback"></label>
     </div>
 
-
+    
     <div class="form-group row">
         <label class="col-form-label col-form-label-lg col-sm-2 text-right">Email</label>
-        <input class="form-control form-control-lg col-sm-8" type="email" name="email" maxlength="320" required />
+        <input class="form-control form-control-lg col-sm-8" type="email" name="email" minlength="8" maxlength="100" 
+                pattern="^[a-zA-Z0-9_\.]{2,}@[a-z0-9]+\.[a-z]{2,}$" title="Enter a valid email" required />
     </div>
 
 
     <div class="form-group row">
         <label class="col-form-label col-form-label-lg col-sm-2 text-right">Password</label>
-        <input class="form-control form-control-lg col-sm-5" type="password" name="password" maxlength="50" required />
+        <input class="form-control form-control-lg col-sm-5" type="password" name="password" id="password" minlength="8" maxlength="50"
+                pattern="^[a-zA-Z]+[0-9][a-zA-Z0-9]*$" title="Aplanumeric, starts with a letter, contains at least 1 digit" required />
+        
+        <label class="col-form-label col-sm-4 text-danger" id="passwordFeedback"></label>
     </div>
 
 
     <div class="form-group row">
-        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Re-Password</label>
-        <input class="form-control form-control-lg col-sm-5" type="password" name="passwordConfirm" maxlength="50" required />
+        <label class="col-form-label col-form-label-lg col-sm-2 text-right">Retype Password</label>
+        <input class="form-control form-control-lg col-sm-5" type="password" name="passwordConfirm" 
+                id="passwordConfirm" maxlength="50" required />
+
+        <label class="col-form-label col-sm-2 text-danger" id="passwordConfirmFeedback"></label>
     </div>
 
 
     <div class="form-group row">
         <label class="col-form-label col-form-label-lg col-sm-2 text-right">Phone Number</label>
-        <input class="form-control form-control-lg col-sm-5" type="tel" name="phoneNumber" maxlength="10" />
+        <input class="form-control form-control-lg col-sm-5" type="tel" name="phoneNumber" minlength="10" 
+                pattern="^$|^[0-9]{10,15}$" placeholder="(Optional)" />
     </div>
 
 
@@ -52,6 +62,8 @@
             <label class="form-check-label" for="genderOther">Other</label>
         </div>
     </div>
+
+    
 
     <div class="container">
         <div class="row">

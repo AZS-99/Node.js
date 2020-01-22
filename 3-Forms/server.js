@@ -22,8 +22,7 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', (req, res) => {
     res.render("Home", {
-        title: "Home",
-        navItems: navItems
+        title: "Home"
     })
 })
 
