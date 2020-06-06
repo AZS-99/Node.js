@@ -18,3 +18,10 @@
 
 5- Delete all data in database:
 	heroku pg:reset DATABASE -a appName
+
+6- Delete git on Heroku
+	heroku plugins:install heroku-repo
+	heroku repo:reset -a appname
+
+7- set Heroku to a git
+	Heroku git:remote -a app_name

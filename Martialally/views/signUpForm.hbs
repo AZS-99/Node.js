@@ -1,0 +1,33 @@
+<form method="POST" action="signUp">
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2">First Name</label>
+        <input class="form-control form-control-lg col-sm-4" type="text" minlength="2" maxlength="25" 
+                pattern="^[a-zA-Z]{2,25}$" title="Enter a valid name" name="firstName" />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2">Surname</label>
+        <input class="form-control form-control-lg col-sm-4" type="text" minlength="2" maxlength="25" 
+                pattern="^[a-zA-Z]{2,25}$" title="Enter a valid name" name="surname" />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2">Email</label>
+        <input class="form-control form-control-lg col-sm-6" type="email" minlength="8" maxlength="100"
+                pattern="^[a-zA-Z0-9_\.]{2,90}@[a-zA-Z0-9_]{2,10}\.[a-z]{2,3}$" title="Enter a valid email" name="email" /> 
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2">Password</label>
+        <input class="form-control form-control-lg col-sm-6" type="password" minlength="8" maxlength="50" name="password" />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-sm-2">Retype Password</label>
+        <input class="form-control form-control-lg col-sm-6" type="password" minlength="8" maxlength="50" name="repassword" />
+    </div>
+
+    <div class="form-group row">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
