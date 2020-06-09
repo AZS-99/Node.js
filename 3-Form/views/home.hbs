@@ -1,0 +1,33 @@
+<div class="grid grid-5-template-column grid-rows all-height ">
+    {{>jumbotron bg="bg-green" headline="EFAS"}}
+    {{>navbar bg="bg-grey"}}
+
+    <form method="POST" action="/sign_up" class="flex justify-centre align-centre span-all-grid-columns">
+        <fieldset class="grid grid-2-template-columns">
+            <legend class="font-xlarge">Sign up</legend>
+
+            <label class="bold font-xlarge">First Name</label>
+            <input type="text" name="first_name" pattern="^[a-z]{2,30}$" title="Enter your real name" required />
+
+            <label class="bold font-xlarge">Surname</label>
+            <input type="text" name="surname" pattern="^[a-z]{2,30}$" "Enter your real surname" required />
+
+            <label class="bold font-xlarge">Email</label>
+            <input type="email" name="email" pattern="^\w{2,30}@\w{2,15}\.[a-z]{2,5}$" required />
+
+            <label class="bold font-xlarge">Password</label>
+            <input type="password" name="password" id="password" pattern="^(?=.*?[a-z])(?=.*?\d)(?=.*?[A-Z])[\w@-]{8,30}"
+                title="Lower case" required />
+
+            <label class="bold font-xlarge">Retype Password </label>
+            <input type="password" name="re_password" id="re_password" pattern="^(?=.*?[a-z])(?=.*?\d)(?=.*?[A-Z])[\w@-]{8,30}"
+                title="Lower case" required />
+
+            <button type="submit">Submit</button>
+
+            <label id="feedback"></label>
+        </fieldset>
+    </form>
+</div>
+
+<script src="/public/js/sign_up.js"></script>
