@@ -5,11 +5,14 @@ const HTTP_PORT = 8080
 
 const app = express() 
 
-app.set("view engine", "hbs")
+//Define the express-handlebars to express
 app.engine("hbs", exphbs({
     extname: 'hbs',
     defaultLayout: 'main'
 }))
+//In order to avoid using the extension '.hbs' with every single file 
+app.set("view engine", "hbs")
+
 app.use('/public', express.static(path.join(__dirname, '/public')))
 
 
