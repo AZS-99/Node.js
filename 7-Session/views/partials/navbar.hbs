@@ -1,0 +1,19 @@
+<div class="span-all-cols flex justify-space-between bg-red">
+    <ul class="flex gap-1rem justify-space-around no-bullets">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+
+    </ul>
+    <ul class="flex gap-1rem justify-space-around no-bullets">
+        <li>
+            {{#if session.user}}{{session.user.first_name}} {{else}} No name {{/if}}
+        </li>
+        <li>
+            <a href="/sign_up">Sign up</a>
+        </li>
+    </ul>
+</div>
