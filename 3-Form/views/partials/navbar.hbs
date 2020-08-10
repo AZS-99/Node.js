@@ -1,4 +1,4 @@
-<div class="span-all-grid-col flex justify-space-between bg-red">
+<div class="span-all-cols flex justify-space-between bg-red">
     <ul class="flex gap-1rem justify-space-around no-bullets">
         <li>
             <a href="/">Home</a>
@@ -10,10 +10,17 @@
     </ul>
     <ul class="flex gap-1rem justify-space-around no-bullets">
         <li>
-            <a href="/log_in">Log in</a>
+            <a href="#log_in_form">Log in</a>
         </li>
         <li>
             <a href="/sign_up">Sign up</a>
         </li>
     </ul>
 </div>
+
+<div class="absolute centre invisible" id="log_in_form">
+    <a href="#" class="xxlg">&times;</a>
+    <input type="email" name="email" class="block xlg" placeholder="Email" />
+    <input type="password" name="password" class="block xlg" placeholder="Password"/>
+    <button type="submit" class="xlg">Submit</button>
+</div> 

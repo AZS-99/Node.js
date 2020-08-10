@@ -1,16 +1,16 @@
 <div class="span-all-cols flex justify-space-between bg-red">
-    <ul class="flex gap-1rem justify-space-around no-bullets">
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-
+    <ul class="flex justify-space-around gap-1rem no-bullets">
+        {{#each left_nav}}
+            <li>
+                <a href={{this}}>{{@key}}</a>
+            </li>
+        {{/each}}
     </ul>
-    <ul class="flex gap-1rem justify-space-around no-bullets">
-        <li>
-            <a href="/sign_up">Sign up</a>
-        </li>
+    <ul class="flex justify-space-around gap-1rem no-bullets">
+        {{#each right_nav}}
+            <li>
+                <a href={{this}}>{{@key}}</a>
+            </li>
+        {{/each}}
     </ul>
 </div>
