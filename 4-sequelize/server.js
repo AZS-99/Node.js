@@ -39,6 +39,7 @@ app.get('/sign_up', (req, res) => {
 
 app.post('/sign_up', async (req, res) => {
     try {
+        console.log(req.body)
         await database.add_user(req.body)
         res.send("User added successfully")
     } catch (error) {
