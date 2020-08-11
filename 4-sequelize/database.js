@@ -55,6 +55,7 @@ const users = database.define('Users', {
     },
     email: {
         type: Sequelise.STRING,
+        unique: true,
         validate: {
             isEmail: true
         }
