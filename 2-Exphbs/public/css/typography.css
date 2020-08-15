@@ -1,0 +1,52 @@
+*.bold {
+    font-weight: bold;
+}
+
+
+*.bold-lg {
+    font-weight: bold;
+    font-size: large;
+}
+
+
+*.bold-xlg {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+*.bold-xxlg {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+
+*.italic {
+    font-style: italic;
+}
+
+
+*.lg {
+    font-size: large;
+}
+
+
+*.lg-plus {
+    font-size: larger;
+}
+
+
+*.small {
+    font-size: small;
+}
+
+
+*.xlg {
+    font-size: x-large;
+}
+
+
+*.xxlg {
+    font-size: xx-large;
+}
+

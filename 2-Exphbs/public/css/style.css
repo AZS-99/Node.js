@@ -1,0 +1,171 @@
+@import "grid.css";
+@import "margin.css";
+@import "padding.css";
+@import "position.css";
+@import "typography.css";
+
+
+
+#log_in_form:target {
+    visibility: visible;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+*.absolute {
+    position: absolute;
+}
+
+*.sticky {
+    position: sticky;
+}
+
+*.fixed {
+    position: fixed;
+}
+
+
+*.align-items-centre {
+    align-items: center;
+}
+
+
+*.bg-black {
+    background-color: black;
+}
+
+*.bg-green {
+    background-color: #28a745;
+}
+
+*.bg-grey {
+    background-color: grey;
+}
+
+*.bg-red {
+    background-color: #dc3545;
+}
+
+
+*.radius-half {
+    border-radius: 0.5rem;
+}
+
+*.radius-1rem {
+    border-radius: 1rem;
+}
+
+
+*.box-sizing-border {
+    box-sizing: border-box;
+}
+
+
+*.block {
+    display: block;
+}
+
+*.flex {
+    display: flex;
+}
+
+
+*.fs-lg {
+    font-size: large;
+}
+
+
+*.gap-1rem {
+    gap: 1rem;
+}
+
+*.gap-5px {
+    gap: 5px;
+}
+
+*.gap-half {
+    gap: 0.5rem;
+}
+
+
+*.hide {
+    display: none;
+}
+
+
+*.justify-end {
+    justify-content: flex-end;
+}
+
+*.justify-space-around {
+    justify-content: space-around;
+}
+
+*.justify-space-between {
+    justify-content: space-between;
+}
+
+
+*.no-bullets {
+    list-style: none;
+}
+
+*.no-decoration {
+    text-decoration: none;
+}
+
+
+*.h-100p {
+    height: 100%;
+}
+
+*.h-100vh {
+    height: 100vh;
+}
+
+
+
+
+
+*.visible {
+    visibility: visible;
+}
+
+*.invisible {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+*.w-0 {
+    width: 0;
+}
+
+*.w-49 {
+    width: 49%;
+}
+
+*.w-50 {
+    width: 50%;
+}
+
+*.w-75 {
+    width: 75%;
+}
+
+*.w-100 {
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+}
