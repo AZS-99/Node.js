@@ -1,11 +1,13 @@
-<div class="flex justify-space-between align-items-centre span-all-cols bg-grey">
-    <ul class="flex justify-space-between align-items-centre no-bullets">
-        <li class="p-half">Home</li>
-        <li class="p-half">About</li>
+<div class="flex-between span-all-cols bg-grey">
+    <ul class="flex gap-1rem no-bullets">
+        {{#each left_nav}}
+            <li><a href={{this}}>{{@key}}</a></li>
+        {{/each}}
     </ul>
 
-    <ul class="flex justify-space-between align-items-centre no-bullets">
-        <li class="p-half">Sign up</li>
-        <li class="p-half">Log in</li>
+    <ul class="flex gap-1rem no-bullets">
+        {{#each right_nav}}
+            <li><a href={{this}}>{{@key}}</a></li>
+        {{/each}}
     </ul>
 </div>

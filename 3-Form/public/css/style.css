@@ -1,3 +1,5 @@
+@import "colour.css";
+@import "flex.css";
 @import "grid.css";
 @import "margin.css";
 @import "padding.css";
@@ -6,7 +8,11 @@
 
 
 
-#log_in_form:target {
+#log_in:target {
+    visibility: visible;
+}
+
+#sign_up:target {
     visibility: visible;
 }
 
@@ -19,6 +25,7 @@ body {
 *.absolute {
     position: absolute;
 }
+
 
 *.sticky {
     position: sticky;
@@ -34,25 +41,19 @@ body {
 }
 
 
-*.bg-black {
-    background-color: black;
+
+*.centre-content {
+    text-align: center;
 }
 
-*.bg-green {
-    background-color: #28a745;
-}
 
-*.bg-grey {
-    background-color: grey;
-}
-
-*.bg-red {
-    background-color: #dc3545;
+*.circle {
+    border-radius: 50%;
 }
 
 
 *.radius-half {
-    border-radius: 0.5rem;
+    border-radius: 0.5rem !important;
 }
 
 *.radius-1rem {
@@ -69,9 +70,7 @@ body {
     display: block;
 }
 
-*.flex {
-    display: flex;
-}
+
 
 
 *.fs-lg {
@@ -97,16 +96,14 @@ body {
 }
 
 
-*.justify-end {
-    justify-content: flex-end;
+
+
+*.h-100p {
+    height: 100%;
 }
 
-*.justify-space-around {
-    justify-content: space-around;
-}
-
-*.justify-space-between {
-    justify-content: space-between;
+*.h-100vh {
+    height: 100vh;
 }
 
 
@@ -119,15 +116,10 @@ body {
 }
 
 
-*.h-100p {
-    height: 100%;
+
+.opacity-80 {
+    opacity: 0.8;
 }
-
-*.h-100vh {
-    height: 100vh;
-}
-
-
 
 
 

@@ -1,26 +1,22 @@
-<div class="span-all-cols flex justify-space-between bg-red">
-    <ul class="flex gap-1rem justify-space-around no-bullets">
+<div class="span-all-cols flex-between bg-red">
+    <ul class="flex-around gap-1rem no-bullets">
+        {{#each left_nav}}
         <li>
-            <a href="/">Home</a>
+            <a href={{this}}>{{@key}}</a>
         </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
+        {{/each}}
 
     </ul>
-    <ul class="flex gap-1rem justify-space-around no-bullets">
+    <ul class="flex-around gap-1rem no-bullets">
+        {{#each right_nav}}
         <li>
-            <a href="#log_in_form">Log in</a>
+            <a href={{this}}>{{@key}}</a>
         </li>
-        <li>
-            <a href="/sign_up">Sign up</a>
-        </li>
+        {{/each}}
     </ul>
 </div>
 
-<div class="absolute centre invisible" id="log_in_form">
-    <a href="#" class="xxlg">&times;</a>
-    <input type="email" name="email" class="block xlg" placeholder="Email" />
-    <input type="password" name="password" class="block xlg" placeholder="Password"/>
-    <button type="submit" class="xlg">Submit</button>
-</div> 
+
+
+
+

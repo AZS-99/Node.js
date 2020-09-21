@@ -1,9 +1,10 @@
+require('dotenv').config()
 const body_parser = require('body-parser')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
 
-const HTTP_HOST = 8080
+const HTTP_PORT = process.env.HTTP_PORT
 
 
 const app = express() 
@@ -11,7 +12,12 @@ const app = express()
 //Define express-handlebars to express
 app.engine('hbs', exphbs({
     extname: 'hbs',
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    helpers: {
+        json: (str) => {
+            return JSON.parse(str)
+        }
+    }
 }))
 //In order to avoid specifying the extension '.hbs' every single time
 app.set('view engine', 'hbs')
@@ -25,16 +31,9 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/sign_up', (req, res) => {
-    res.render('sign_up')
-})
-
-
 app.post('/sign_up', (req, res) => {
     res.send(req.body)
 })
 
 
-
-
-app.listen(HTTP_HOST)
+app.listen(HTTP_PORT)

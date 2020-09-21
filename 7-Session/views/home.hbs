@@ -1,2 +1,6 @@
 {{>jumbotron jumbo_content="EFAS"}}
-{{>navbar}}
+{{>navbar
+    left_nav=(json '{"Home": "/", "About": "/about"}')
+    right_nav=(json '{"Log in": "/log_in", "Sign up": "/Sign_up"}')
+    right_nav_logged=(json '{ "Account": "/account", "Log out": "/log_out"} ')
+}}

@@ -1,3 +1,6 @@
 {{>jumbotron}}
-{{>navbar}}
+{{>navbar
+    left_nav=(json ' {"Home": "/", "About": "/about"} ')
+    right_nav=(json '{"Log in": "/log_in", "Sign up": "/sign_up"}')
+}}
 

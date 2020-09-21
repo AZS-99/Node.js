@@ -6,3 +6,7 @@
 *.ml-auto {
     margin-left: auto;
 }
+
+*.mb-auto {
+    margin-bottom: auto;
+}

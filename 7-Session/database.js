@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const Sequelise = require('sequelize')
 const pg = require('pg')
+pg.defaults.ssl = true
 
 
 
@@ -12,7 +13,6 @@ const database = new Sequelise('d6ekrv4s2uj6gh', 'wkwcjdovgjzdts', '314b08287fcf
     dialect: 'postgres',
     dialectOptions: {
         ssl: {
-            require: true,
             rejectUnauthorized: false
         }
     },

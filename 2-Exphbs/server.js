@@ -9,7 +9,12 @@ const app = express()
 //Define the express-handlebars to express
 app.engine("hbs", exphbs({
     extname: 'hbs',
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    helpers: {
+        json: (str) => {
+            return JSON.parse(str)
+        }
+    }
 }))
 //In order to avoid using the extension '.hbs' with every single file 
 app.set("view engine", "hbs")

@@ -1,27 +1,37 @@
-*.bold {
+*.B {
     font-weight: bold;
 }
 
+*.BI {
+    font-weight: bold;
+    font-style: italic;
+}
 
-*.bold-lg {
+*.BIU {
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+*.B-lg {
     font-weight: bold;
     font-size: large;
 }
 
 
-*.bold-xlg {
+*.B-xlg {
     font-weight: bold;
     font-size: x-large;
 }
 
 
-*.bold-xxlg {
+*.B-xxlg {
     font-weight: bold;
     font-size: xx-large;
 }
 
 
-*.italic {
+*.I {
     font-style: italic;
 }
 

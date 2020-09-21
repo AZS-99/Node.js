@@ -1,0 +1,78 @@
+*.absolute {
+    position: absolute;
+}
+
+
+*.fixed {
+    position: fixed;
+}
+
+
+*.relative {
+    position: relative;
+}
+
+
+*.centre {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+*.bottom-25pt {
+    bottom: 25%;
+}
+
+*.bottom-50pt {
+    bottom: 50%;
+}
+
+*.bottom-75pt {
+    bottom: 75%;
+}
+
+*.bottom-100pt {
+    bottom: 100%;
+}
+
+
+
+*.left-25pt {
+    left: 25%;
+}
+
+*.left-50pt {
+    left: 50%;
+}
+
+*.left-75pt {
+    left: 75%;
+}
+
+*.left-100pt {
+    left: 100%;
+}
+
+
+
+
+
+*.top-25pt {
+    top: 25%;
+}
+
+*.top-50pt {
+    top: 50%;
+}
+
+*.top-75pt {
+    top: 75%;
+}
+
+*.top-100pt {
+    top: 100%;
+}

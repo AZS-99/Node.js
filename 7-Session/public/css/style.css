@@ -1,11 +1,41 @@
 @import "grid.css";
+@import "margin.css";
 @import "padding.css";
+@import "position.css";
 @import "typography.css";
 
 
 
+#log_in_form:target {
+    visibility: visible;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+*.absolute {
+    position: absolute;
+}
+
+*.sticky {
+    position: sticky;
+}
+
+*.fixed {
+    position: fixed;
+}
+
+
 *.align-items-centre {
     align-items: center;
+}
+
+
+*.bg-black {
+    background-color: black;
 }
 
 *.bg-green {
@@ -21,8 +51,12 @@
 }
 
 
-*.br-half-rem {
+*.radius-half {
     border-radius: 0.5rem;
+}
+
+*.radius-1rem {
+    border-radius: 1rem;
 }
 
 
@@ -50,11 +84,22 @@
 }
 
 *.gap-5px {
-    gap: 5px
+    gap: 5px;
+}
+
+*.gap-half {
+    gap: 0.5rem;
 }
 
 
+*.hide {
+    display: none;
+}
 
+
+*.justify-end {
+    justify-content: flex-end;
+}
 
 *.justify-space-around {
     justify-content: space-around;
@@ -86,6 +131,13 @@
 
 
 
+*.visible {
+    visibility: visible;
+}
+
+*.invisible {
+    visibility: hidden;
+}
 
 
 
@@ -93,6 +145,9 @@
 
 
 
+*.w-0 {
+    width: 0;
+}
 
 *.w-49 {
     width: 49%;

@@ -10,7 +10,10 @@
 2- create database for app appName:
 	heroku addons:create heroku-postgresql:hobby-dev -a appName
 
-3- check database credentials for appName:
+3- get database URL: 
+	heroku config:get DATABASE_URL -a <your_heroku_app_name>
+
+   check database credentials for appName:
 	heroku pg:credentials:url DATABASE -a appName
 
 4- destroy an app:
