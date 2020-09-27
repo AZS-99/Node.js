@@ -1,0 +1,27 @@
+{{>navbar}}
+<form method="POST" action="/sign_up" class="span-6-cols span-6-rows grid-2 gap-half">
+    <input type="text" name="first_name" class="lg" pattern="^[a-zA-Z]{2,30}$" placeholder="First Name" />
+    <input type="text" name="surname" class="lg" pattern="^[a-zA-Z]{2,30}$" placeholder="First Name" />
+
+    <input type="email" name="email" class="span-all-cols lg" />
+    <input type="password" name="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[\w$@]{8,20}$" class="span-all-cols lg" />
+    <div class="flex-aCentre-around">
+        <div>
+            <input type="radio" id="male" name="gender" value="MALE" />
+            <label for="male">Male</label>
+        </div>
+        
+        <div>
+            <input type="radio" id="female" name="gender" value="FEMALE" />
+            <label for="female">Female</label>
+        </div>
+        
+        <div>
+            <input type="radio" id="other" name="gender" value="OTHER" />
+            <label for="other">Other</label>
+        </div>
+    </div>
+    
+    <input type="date" name="DOB" class="lg"/>
+    <button>submit</button>
+</form>

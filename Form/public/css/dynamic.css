@@ -1,0 +1,44 @@
+*.dropdown > input:checked ~ ul {
+    display: block;
+}
+
+*.dropdown > label:after {
+    content: "\21D3";
+    font-weight: bold;
+}
+
+*.dropdown > input:checked + label:after {
+    content: "\21D1"
+}
+
+*.dropdown > input:checked ~ ul > li:hover {
+    background: green;
+}
+
+
+input[type="checkbox"].btn + button {
+    background-color: #28a745;
+}
+
+input[type="checkbox"].btn:checked + button {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+*.reveal input[type="checkbox"]:checked ~ *.hidden {
+    display: inline-block;
+}
+
+
+#log_in:target {
+    visibility: visible;
+}
+
+#manage:target {
+    visibility: visible;
+}
+
+#sign_up:target {
+    visibility: visible;
+}
