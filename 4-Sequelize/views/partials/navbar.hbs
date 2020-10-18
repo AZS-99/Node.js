@@ -1,0 +1,21 @@
+<div class="span-all-cols flex-between {{bg_colour}}">
+    <ul class="flex gap-1 no-bullets">
+        {{#each left_nav}}
+        <li>
+            <a href={{this}}>{{@key}}</a>
+        </li>
+        {{/each}}
+    </ul>
+
+    <ul class="flex gap-1 no-bullets">
+        {{#each right_nav}}
+        <li class="reveal">
+            <input type="checkbox" class="no-display" id="{{this}}">
+            <label for="{{this}}">{{@key}}</label>
+            {{> (evaluate .)}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+
