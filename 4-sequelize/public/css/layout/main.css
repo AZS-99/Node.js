@@ -1,0 +1,25 @@
+@import "grid.css";
+@import "flex.css";
+
+
+*.gap-1 {
+    gap: 1rem;
+}
+
+*.gap-2 {
+    gap: 2rem;
+}
+
+*.gap-half {
+    gap: 0.5rem;
+}
+
+/*********************************************************************/
+
+*.gap-1px {
+    gap: 1px;
+}
+
+*.gap-5px {
+    gap: 5px;
+}
