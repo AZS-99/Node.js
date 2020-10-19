@@ -7,4 +7,4 @@ app.get('/', (req, res) => {
     res.send("Success")
 })
 
-app.listen(process.env.HTTP_PORT)
+app.listen(process.env.PORT)
