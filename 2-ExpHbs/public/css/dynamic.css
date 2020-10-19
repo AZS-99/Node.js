@@ -26,12 +26,12 @@ input[type="checkbox"].btn:checked + button {
 }
 
 
-*.reveal input[type="checkbox"]:checked ~ *.hidden {
-    display: inline-block;
+*.reveal input[type="checkbox"]:checked ~ *.invisible {
+    visibility: visible;
 }
 
 
-#log_in:target {
+#log_in:target {    
     visibility: visible;
 }
 

@@ -16,7 +16,13 @@
 *.centre {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, 50%);
+}
+
+
+*.top-left-corner {
+    top: 0;
+    left: 0;
 }
 
 

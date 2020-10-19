@@ -1,18 +1,17 @@
-<div class="span-all-cols flex-aCentre-between {{bg_colour}}">
-    
-    <ul class="flex-around no-bullets">
+<nav class="span-all-cols flex-between {{nav_bg_colour}}">
+    <ul class="no-bullets flex-around">
         {{#each nav_left}}
-        <li>
-            <a href="{{this}}">{{@key}}</a>
-        </li>
+            <li>
+                <a href="{{this}}">{{@key}}</a>
+            </li>
         {{/each}}
     </ul>
 
-    <ul class="flex-around no-bullets">
-        {{#each nav_right }}
-        <li>
-            <a href="{{this}}">{{@key}}</a>
-        </li>
+    <ul class="no-bullets flex-around">
+        {{#each nav_right}}
+            <li>
+                <a href="{{this}}">{{@key}}</a>
+            </li>
         {{/each}}
     </ul>
-</div>
+</nav>

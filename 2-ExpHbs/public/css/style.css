@@ -1,13 +1,10 @@
 @import "colour.css";
 @import "display.css";
 @import "dynamic.css";
-@import "flex.css";
-@import "grid.css";
+@import "layout/main.css";
 @import "box.css";
 @import "position.css";
 @import "typography.css";
-
-
 
 
 
@@ -73,7 +70,7 @@ ul.no-bullets {
     border-radius: 0.5rem !important;
 }
 
-*.radius-1rem {
+*.radius-1 {
     border-radius: 1rem;
 }
 
@@ -95,29 +92,10 @@ ul.no-bullets {
 }
 
 
-*.gap-1rem {
-    gap: 1rem;
-}
-
-*.gap-5px {
-    gap: 5px;
-}
-
-*.gap-half {
-    gap: 0.5rem;
-}
-
 
 *.hidden {
     display: none;
 }
-
-
-
-
-
-
-
 
 
 *.no-decoration {
@@ -126,7 +104,7 @@ ul.no-bullets {
 
 
 
-.opacity-80pt {
+.opacity-80 {
     opacity: 80%;
 }
 
