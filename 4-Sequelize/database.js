@@ -6,6 +6,25 @@ pg.defaults.ssl = true
 
 const database = new Sequelise (process.env.DATABASE_URL)
 
+const {RateLimiterPostgres} = require('rate-limiter-flexible');
+
+module.exports = async (opts) => {
+  return new Promise((resolve, reject) => {
+    
+    const ready = (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rateLimiter)
+      }
+    }
+    const rateLimiter = new RateLimiterPostgres({
+        storeClient: database,
+  }, ready);
+   
+  })
+}
+
 
 module.exports.initialise = async () => {
     try { await database.sync() } 

@@ -4,9 +4,9 @@ const database = require('./database')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
+const rateLimiter = require('./middlewares/rateLimiter')
+const globals = require('./middlewares/globals')
 
-
-const HTTP_PORT = process.env.HTTP_PORT
 
 const app = express()
 
@@ -23,16 +23,14 @@ app.engine('hbs', exphbs({
         }
     }
 }))
+
 //To avoid having to use extension name in render
 app.set('view engine', 'hbs')
+
+
 app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use(urlencoded({extended: true}))
-app.use((req, res, next) => {
-    res.locals.left_nav = {"Home": "/", "About": "/about"}
-    res.locals.right_nav = {"Log in": "log_in", "Sign up": "sign_up"}
-    res.locals.tmp = "log_in"
-    next()
-})
+app.use(globals, rateLimiter) 
 
 
 app.get('/', (req, res) => {
@@ -50,7 +48,7 @@ app.post('/sign_up', async (req, res) => {
 
 ;(async () => {
     await database.initialise()
-    app.listen(HTTP_PORT)
+    app.listen(process.env.PORT)
 }) ()
 
 
