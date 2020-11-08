@@ -50,5 +50,3 @@ app.post('/sign_up', async (req, res) => {
     await database.initialise()
     app.listen(process.env.PORT)
 }) ()
-
-

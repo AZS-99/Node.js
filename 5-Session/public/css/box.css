@@ -1,0 +1,123 @@
+*.border-1px {
+	border: 1px solid;
+}
+
+
+
+
+*.h-100p {
+    height: 100%;
+}
+
+*.h-100vh {
+    height: 100vh;
+}
+
+
+
+
+*.m-0 {
+    margin: 0;
+}
+
+*.mb-auto {
+    margin-bottom: auto;
+}
+
+
+*.ml-auto {
+    margin-left: auto;
+}
+
+
+*.ml-1 {
+    margin-left: 1rem;
+}
+
+
+*.mr-1 {
+    margin-left: 1rem;
+}
+
+
+*.p-half {
+    padding: 0.5rem;
+}
+
+*.p-0 {
+	padding: 0;
+}
+
+*.p-1 {
+	padding: 1rem;
+}
+
+*.p-2 {
+	padding: 2rem;
+}
+
+*.p-3 {
+	padding: 3rem;
+}
+
+*.p-4 {
+	padding: 4rem;
+}
+
+*.p-5 {
+	padding: 5rem;
+}
+
+*.p-6 {
+	padding: 6rem;
+}
+
+*.p-7 {
+	padding: 7rem;
+}
+
+*.p-8 {
+	padding: 8rem;
+}
+
+*.p-9 {
+	padding: 9rem;
+}
+
+
+*.pr-1 {
+	padding-right: 1rem;
+}
+
+
+*.px-1 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+
+
+
+*.w-0 {
+    width: 0;
+}
+
+*.w-49pt {
+    width: 49%;
+}
+
+*.w-50pt {
+    width: 50%;
+}
+
+*.w-75pt {
+    width: 75%;
+}
+
+*.w-100pt {
+    width: 100%;
+}
+
+*.w-200pt {
+	width: 200%;
+}

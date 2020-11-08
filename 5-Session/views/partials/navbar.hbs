@@ -1,0 +1,17 @@
+<nav class="span-all-cols flex-between bg-green">
+    <ul class="flex-around no-bullets">
+        {{#each left_nav}}
+            <li>
+                <a href="{{this}}">{{@key}}</a>
+            </li>
+        {{/each}}
+    </ul>
+
+    <ul class="flex-around no-bullets">
+        {{#each right_nav}}
+            <li >
+                <a href="{{this}}">{{@key}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</nav>
