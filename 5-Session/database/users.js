@@ -41,7 +41,14 @@ const users = database.define('USERs', {
         afterValidate: async (user, options) => {
             user.password = await bcrypt.hash(user.password, Number(process.env.SALT_ROUNDS))
         }
-    }
+    },
+    indexes: [
+        {
+            name: 'IDX_EMAIL',
+            fields: ['email'],
+            unique: true
+        }
+    ]
 })
 
 
