@@ -1,4 +1,14 @@
-<form action="/log_in" method="POST">
-    <input type="email" name="email" placeholder="Email" />
-    <input type="password" name="password" placeholder="Password"/>
+<form method="POST" action="/log_in" class="span-cols-5-9 span-rows-8-12 flex-col-jCentre gap-half bg-white">
+    
+    <input type="email" name="email" class="xlg" placeholder="Email" pattern="^[\w.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" title="Enter a valid email" required />
+
+    <input type="password" name="password" class="xlg" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)\w{8,30}$" 
+        title="8 alphanumeric characters required with at least 1 uppercase, 1 lowercase, and  1 digit" required/>
+
+    <input type="hidden" name="_csrf" value="{{csurf_token}}" /> 
+
+    <div class="flex-around">
+        <button class="xlg">Submit</button>
+        <button class="xlg" type="button"><label for="log_in">Cancel</label></button>
+    </div>
 </form>

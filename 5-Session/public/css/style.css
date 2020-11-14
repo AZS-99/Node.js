@@ -31,7 +31,7 @@ hr {
     border: solid 1px black;
 }
 
-ul.no-bullets {
+nav > ul {
     list-style: none;
 }
 

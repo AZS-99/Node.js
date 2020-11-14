@@ -1,17 +1,20 @@
-<nav class="span-all-cols flex-between bg-green">
-    <ul class="flex-around no-bullets">
-        {{#each left_nav}}
+<nav class=" w-100pt span-all-cols flex-between  {{nav_bg_colour}}">
+    <ul class="flex-around gap-1">
+        {{#each nav_left}}
             <li>
                 <a href="{{this}}">{{@key}}</a>
             </li>
         {{/each}}
     </ul>
 
-    <ul class="flex-around no-bullets">
-        {{#each right_nav}}
-            <li >
+    <ul class="flex-around gap-1">
+        
+        {{#each (ternary session.user nav_right_logged nav_right )}}
+            <li>
                 <a href="{{this}}">{{@key}}</a>
             </li>
         {{/each}}
+
+    
     </ul>
 </nav>

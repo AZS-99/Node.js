@@ -1,3 +1,12 @@
-<form action="/sign_up" method="POST">
-    <input class=
+<form action="/sign_up" method="POST" class="span-cols-5-9 span-rows-8-12 grid-2-4 gap-half bg-white">
+    <input type="text" name="first_name" class="xlg" placeholder="First Name" pattern="^([A-Z]|[a-z])[a-z]{1,20}$">
+    <input type="text" name="surname" class="xlg" placeholder="Surname" pattern="^([A-Z]|[a-z])[a-z]{1,20}$">
+
+    <input type="email" name="email" class="xlg span-all-cols" placeholder="Email" pattern="^[\w.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" required />
+    <input type="password" name="password" class="xlg span-all-cols" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w]{8,30}$" required/>
+
+    <div class="span-all-cols flex-around">
+        <button class="xlg">Submit</button>
+        <button class="xlg" type="button"><label for="sign_up">Cancel</label></button>
+    </div>
 </form>
